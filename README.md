@@ -28,13 +28,13 @@ Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 
 ## Install & Upgrade
 
-### Auto install & upgrade
+### 1. Auto install & upgrade
 
 ```shell
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
 
-### Manual install & upgrade
+### 2. Manual install & upgrade
 
 1. Download latest package from: https://github.com/vaxilu/x-ui/releases, generally choose the `amd64` architecture
 2. Use `root` user to log in to your server then upload package to `/root/` directory
@@ -54,9 +54,11 @@ systemctl enable x-ui
 systemctl restart x-ui
 ```
 
-### Deploy x-ui on docker
+### 3. Start a x-ui server instance
 
 > Not recommended using docker, it make ping get high
+
+1. Docker Deploy
 
 ```shell
 mkdir x-ui && cd x-ui
@@ -67,7 +69,7 @@ docker run -itd --network=host \
     enwaiax/x-ui:latest
 ```
 
-> Build docker image
+2. Docker Compose 
 
 ```shell
 docker build -t x-ui .
