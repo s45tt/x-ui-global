@@ -33,7 +33,6 @@ Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
-
 ### 2. Manual install & upgrade
 
 1. Download latest package from: https://github.com/vaxilu/x-ui/releases, generally choose the `amd64` architecture
@@ -53,18 +52,16 @@ systemctl daemon-reload
 systemctl enable x-ui
 systemctl restart x-ui
 ```
-
 ## SSL - bring HTTPS to your server - more secure
 
 > You can using any SSL certificate content of any domain, recommended using certificate content if you don't want to apply SSL/HTTPS to your web interface, only apply to connect
 
-### Get new SSL certificate - file will be stored in /root/cert directory
+#### Get new SSL certificate - file will be stored in /root/cert directory
 ```
 apt-get update
 apt-get install -y certbot
 certbot certonly
 ```
-
 ## Telegram Notification Bot
 
 > This function and tutorial are provided by [FranzKafkaYu](https://github.com/FranzKafkaYu)
@@ -78,7 +75,7 @@ Instructions for use: Set robot-related parameters in the background of the pane
 Reference syntax:
 
 - 30 * * * * * // At second 30
-- ** * * * * // At every minute
+- q* * * * * // At every minute
 - */10 * * * * // At every 10th minute.
 - 30 * * * * // At minute 30
 - @hourly // At minute 0
