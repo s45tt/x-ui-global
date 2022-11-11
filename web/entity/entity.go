@@ -27,16 +27,19 @@ type Pager struct {
 }
 
 type AllSetting struct {
-	WebListen          string `json:"webListen" form:"webListen"`
-	WebPort            int    `json:"webPort" form:"webPort"`
-	WebCertFile        string `json:"webCertFile" form:"webCertFile"`
-	WebKeyFile         string `json:"webKeyFile" form:"webKeyFile"`
-	WebBasePath        string `json:"webBasePath" form:"webBasePath"`
+	WebListen   string `json:"webListen" form:"webListen"`
+	WebPort     int    `json:"webPort" form:"webPort"`
+	WebCertFile string `json:"webCertFile" form:"webCertFile"`
+	WebKeyFile  string `json:"webKeyFile" form:"webKeyFile"`
+	WebBasePath string `json:"webBasePath" form:"webBasePath"`
+
 	TgBotEnable        bool   `json:"tgBotEnable" form:"tgBotEnable"`
 	TgBotToken         string `json:"tgBotToken" form:"tgBotToken"`
 	TgBotChatId        int    `json:"tgBotChatId" form:"tgBotChatId"`
 	TgRunTime          string `json:"tgRunTime" form:"tgRunTime"`
 	XrayTemplateConfig string `json:"xrayTemplateConfig" form:"xrayTemplateConfig"`
+
+	ExportConfigServerAddress string `json:"exportConfigServerAddress" form:"exportConfigServerAddress"`
 
 	TimeLocation string `json:"timeLocation" form:"timeLocation"`
 }

@@ -21,18 +21,20 @@ import (
 var xrayTemplateConfig string
 
 var defaultValueMap = map[string]string{
-	"xrayTemplateConfig": xrayTemplateConfig,
-	"webListen":          "",
-	"webPort":            "54321",
-	"webCertFile":        "",
-	"webKeyFile":         "",
-	"secret":             random.Seq(32),
-	"webBasePath":        "/",
-	"timeLocation":       "Asia/Shanghai",
-	"tgBotEnable":        "false",
-	"tgBotToken":         "",
-	"tgBotChatId":        "0",
-	"tgRunTime":          "",
+	"xrayTemplateConfig":        xrayTemplateConfig,
+	"exportConfigServerAddress": "",
+	"webListen":                 "",
+	"webPort":                   "54321",
+	"webCertFile":               "",
+	"webKeyFile":                "",
+	"secret":                    random.Seq(32),
+	"webBasePath":               "/",
+	"timeLocation":              "Asia/Shanghai",
+
+	"tgBotEnable": "false",
+	"tgBotToken":  "",
+	"tgBotChatId": "0",
+	"tgRunTime":   "",
 }
 
 type SettingService struct {
@@ -188,6 +190,10 @@ func (s *SettingService) setInt(key string, value int) error {
 
 func (s *SettingService) GetXrayConfigTemplate() (string, error) {
 	return s.getString("xrayTemplateConfig")
+}
+
+func (s *SettingService) GetExportConfigServerAddress() (string, error) {
+	return s.getString("exportConfigServerAddress")
 }
 
 func (s *SettingService) GetListen() (string, error) {
