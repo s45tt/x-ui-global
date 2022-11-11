@@ -40,7 +40,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 > If your server cpu architecture is not `amd64`, replace `amd64` in below command with another architecture
 
-```
+```bash
 cd /root/
 rm -rf x-ui/ /usr/local/x-ui/ /usr/bin/x-ui
 tar zxvf x-ui-linux-amd64.tar.gz
@@ -57,7 +57,7 @@ systemctl restart x-ui
 > You can using any SSL certificate content of any domain, recommended using certificate content if you don't want to apply SSL/HTTPS to your web interface, only apply to connect
 
 #### Get new SSL certificate - file will be stored in /root/cert directory
-```console
+```bash
 apt-get update
 apt-get install -y certbot
 certbot certonly
