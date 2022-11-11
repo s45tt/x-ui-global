@@ -96,8 +96,10 @@ Instructions for use: Set robot-related parameters in the background of the pane
 - Telegram Bot cycle runtime (crontab syntax)
 
 Reference syntax:
+
 - 30 * * * * * // At second 30
-- * * * * * // At every minute
+- ** * * * * // At every minute
+- */10 * * * * // At every 10th minute.
 - 30 * * * * // At minute 30
 - @hourly // At minute 0
 - @daily // At 00:00
