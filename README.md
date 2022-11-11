@@ -102,7 +102,7 @@ Change time zone:
 ```shell
 ln -sf /usr/share/zoneinfo/[timezone] /etc/localtime
 ```
-### Ex:
+#### Ex:
 ```shell
 vietnam -> ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 ```
