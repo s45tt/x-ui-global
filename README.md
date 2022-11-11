@@ -30,7 +30,7 @@ Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 
 ### 1. Auto install & upgrade
 
-```shell
+```
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
 
@@ -41,7 +41,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 > If your server cpu architecture is not `amd64`, replace `amd64` in below command with another architecture
 
-```shell
+```
 cd /root/
 rm -rf x-ui/ /usr/local/x-ui/ /usr/bin/x-ui
 tar zxvf x-ui-linux-amd64.tar.gz
@@ -54,16 +54,12 @@ systemctl enable x-ui
 systemctl restart x-ui
 ```
 
-### 3. x-ui on Docker
-
-> Not recommended using docker, it make ping get high
-
 ## SSL - bring HTTPS to your server - more secure
 
 > You can using any SSL certificate content of any domain, recommended using certificate content if you don't want to apply SSL/HTTPS to your web interface, only apply to connect
 
 ### Get new SSL certificate - file will be stored in /root/cert directory
-```shell
+```
 apt-get update
 apt-get install -y certbot
 certbot certonly
@@ -99,10 +95,6 @@ Change time zone:
 
 - Get correctly time in your country
 
-```shell
-ln -sf /usr/share/zoneinfo/[timezone] /etc/localtime
 ```
-#### Ex:
-```shell
 vietnam -> ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 ```
