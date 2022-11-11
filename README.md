@@ -62,13 +62,13 @@ systemctl restart x-ui
 
 > You can using any SSL certificate content of any domain, recommended using certificate content if you don't want to apply SSL/HTTPS to your web interface, only apply to connect
 
-#Get new SSL
+### Get new SSL
 ```shell
 apt-get update
 apt-get install -y certbot
 certbot certonly
 ```
-Certificate file will be stored in /root/cert directory
+#### Certificate file will be stored in /root/cert directory
 
 ## Telegram Notification Bot
 
