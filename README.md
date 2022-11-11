@@ -54,39 +54,20 @@ systemctl enable x-ui
 systemctl restart x-ui
 ```
 
-### 3. Start a x-ui server instance
+### 3. x-ui on Docker
 
 > Not recommended using docker, it make ping get high
-
-1. Docker Deploy
-
-```shell
-mkdir x-ui && cd x-ui
-docker run -itd --network=host \
-    -v $PWD/db/:/etc/x-ui/ \
-    -v $PWD/cert/:/root/cert/ \
-    --name x-ui --restart=unless-stopped \
-    enwaiax/x-ui:latest
-```
-
-2. Docker Compose 
-
-```shell
-docker build -t x-ui .
-```
 
 ## SSL - bring HTTPS to your server - more secure
 
 > You can using any SSL certificate content of any domain, recommended using certificate content if you don't want to apply SSL/HTTPS to your web interface, only apply to connect
 
-Get new SSL
-
+#Get new SSL#
 ```shell
 apt-get update
 apt-get install -y certbot
 certbot certonly
 ```
-
 Certificate file will be stored in /root/cert directory
 
 ## Telegram Notification Bot
