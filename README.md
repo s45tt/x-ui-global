@@ -1,14 +1,14 @@
-# x-ui-global
+## x-ui-global
 
 Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 - README: DONE
 
-# What is x-ui
+## What is x-ui
 
 - It's xray panel with multi-protocol, multi-user support
 - You can create your own "private VPN server" with this
 
-# Features
+## Features
 
 - System status monitoring
 - Support multi-user multi-protocol, web page visualization operation
@@ -26,15 +26,15 @@ Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 - Ubuntu 16+
 - Debian 8+
 
-# Install & Upgrade
+## Install & Upgrade
 
-## Auto install & upgrade
+### Auto install & upgrade
 
 ```shell
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
 
-## Manual install & upgrade
+### Manual install & upgrade
 
 1. Download latest package from: https://github.com/vaxilu/x-ui/releases, generally choose the `amd64` architecture
 2. Use `root` user to log in to your server then upload package to `/root/` directory
@@ -54,7 +54,7 @@ systemctl enable x-ui
 systemctl restart x-ui
 ```
 
-## Deploy x-ui on docker
+### Deploy x-ui on docker
 
 > Not recommended using docker, it make ping get high
 
