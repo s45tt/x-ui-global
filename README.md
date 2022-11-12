@@ -62,7 +62,7 @@ systemctl restart x-ui
 
 > You can using any SSL certificate content of any domain, recommended using certificate content if you don't want to apply SSL/HTTPS to your web interface, only apply to connect
 
-#### Get new SSL certificate - file will be stored in `/root/cert` directory
+#### Get new SSL certificate - file will be stored in **/root/cert** directory
 
 ```console
 apt-get update
