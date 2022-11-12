@@ -83,10 +83,9 @@ Instructions:
 
 Reference syntax:
 
-- 30 * * * * * // At second 30
-- q* * * * * // At every minute
+- . * * * * * // At every minute
 - */10 * * * * // At every 10th minute.
-- 30 * * * * // At minute 30
+- 30 * * * * // At minute 30 (recommended)
 - @hourly // At minute 0
 - @daily // At 00:00
 - @every 8h // At minute 0 past every 8th hour
