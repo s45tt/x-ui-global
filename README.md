@@ -11,17 +11,17 @@ Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 ## Features
 
 - System status monitoring
-- Support multi-user multi-protocol, web page visualization operation
+- Support multi-user, multi-protocol, web visualization operation
 - Supported protocols: vmess, vless, trojan, shadowsocks, dokodemo-door, socks, http
 - Support to configure more transmission configurations
 - Traffic statistics, limit traffic, limit expiration time
+- Support https access panel (need domain + ssl certificate)
 - Customizable xray configuration templates
-- Support https access panel (bring your own domain name + ssl certificate)
-- Support one-click SSL certificate application and automatic renewal
 - For more advanced configuration items, see the panel for details
 
 ## System Requirements
 
+- CPU Architecture: `amd64`, `arm64`
 - CentOS 7+
 - Ubuntu 16+
 - Debian 8+
@@ -31,22 +31,28 @@ Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 ### 1. Auto install & upgrade
 
 ```console
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/doandat943/x-ui-global/main/x-ui.sh)
 ```
 ### 2. Manual install & upgrade
 
-1. Download latest package from: https://github.com/vaxilu/x-ui/releases, generally choose the `amd64` architecture
-2. Use `root` user to log in to your server then upload package to `/root/` directory
+1. Check your cpu architecture to chose package (`x86_64 = amd64`, `aarch64 = arm64`)
+```console
+uname -m
+```
+2. Get package link from: https://github.com/doandat943/x-ui-global/releases
+3. Use `root` user to log in to your server then upload package to `/root/` directory
 
-> If your server cpu architecture is not `amd64`, replace `amd64` in below command with another architecture
+> Tips: Usually, `amd64` appears on most computers and servers, while `arm64` will appear on products like Raspberry Pi, Orange Pi, etc
 
 ```console
 cd /root/
-rm -rf x-ui/ /usr/local/x-ui/ /usr/bin/x-ui
-tar zxvf x-ui-linux-amd64.tar.gz
+rm -rf x-ui/ /usr/local/x-ui/ /usr/bin/x-ui /etc/systemd/system/x-ui.service
+
+wget -N --no-check-certificate -O /usr/local/x-ui-linux.tar.gz [package link]
+tar zxvf x-ui-linux.tar.gz
 chmod +x x-ui/x-ui x-ui/bin/xray-linux-* x-ui/x-ui.sh
-cp x-ui/x-ui.sh /usr/bin/x-ui
-cp -f x-ui/x-ui.service /etc/systemd/system/
+mv x-ui/x-ui.sh /usr/bin/x-ui
+mv -f x-ui/x-ui.service /etc/systemd/system/
 mv x-ui/ /usr/local/
 systemctl daemon-reload
 systemctl enable x-ui
@@ -57,6 +63,7 @@ systemctl restart x-ui
 > You can using any SSL certificate content of any domain, recommended using certificate content if you don't want to apply SSL/HTTPS to your web interface, only apply to connect
 
 #### Get new SSL certificate - file will be stored in /root/cert directory
+
 ```console
 apt-get update
 apt-get install -y certbot
@@ -66,7 +73,7 @@ certbot certonly
 
 > This function and tutorial are provided by [FranzKafkaYu](https://github.com/FranzKafkaYu)
 
-Instructions for use: Set robot-related parameters in the background of the panel, including
+Instructions:
 
 - Telegram Bot Token
 - Telegram Channel/Group ChatID
@@ -88,9 +95,7 @@ Notification content:
 - Node expiration reminder
 - Traffic warning reminder
 
-Change time zone:
-
-- Get correctly time in your country
+Change time zone (to get correctly time in your country):
 
 ```console
 vietnam -> ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
