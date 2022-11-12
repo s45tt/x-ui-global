@@ -1,7 +1,9 @@
 ## x-ui-global
 
 Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
-- README: DONE
+- [x] Introduction (English)
+- [x] Support multi-users on the same port :tada:
+- [ ] Translate web interface to English
 
 ## What is x-ui
 
@@ -30,13 +32,13 @@ Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 
 ### 1. Auto install & upgrade
 
-```console
+```
 bash <(curl -Ls https://raw.githubusercontent.com/doandat943/x-ui-global/main/x-ui.sh)
 ```
 ### 2. Manual install & upgrade
 
 1. Check your cpu architecture to chose package (`x86_64 = amd64`, `aarch64 = arm64`)
-```console
+```
 uname -m
 ```
 2. Get package link from: https://github.com/doandat943/x-ui-global/releases
@@ -44,7 +46,7 @@ uname -m
 
 > Tips: Usually, `amd64` appears on most computers and servers, while `arm64` will appear on products like Raspberry Pi, Orange Pi, etc
 
-```console
+```
 cd /root/
 rm -rf x-ui/ /usr/local/x-ui/ /usr/bin/x-ui /etc/systemd/system/x-ui.service
 
@@ -64,7 +66,7 @@ systemctl restart x-ui
 
 #### Get new SSL certificate - file will be stored in **/root/cert** directory
 
-```console
+```
 apt-get update
 apt-get install -y certbot
 certbot certonly
@@ -97,6 +99,6 @@ Notification content:
 
 Change time zone (to get correctly time in your country):
 
-```console
+```
 vietnam -> ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 ```
