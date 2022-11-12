@@ -42,7 +42,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/doandat943/x-ui-global/main/x-
 uname -m
 ```
 2. Get package link from: https://github.com/doandat943/x-ui-global/releases
-3. Use `root` user to log in to your server then upload package to `/root/` directory
+3. Use `root` user to log in to your server
 
 > Tips: Usually, `amd64` appears on most computers and servers, while `arm64` will appear on products like Raspberry Pi, Orange Pi, etc
 
@@ -51,6 +51,7 @@ cd /root/
 rm -rf x-ui/ /usr/local/x-ui/ /usr/bin/x-ui /etc/systemd/system/x-ui.service
 
 wget -N --no-check-certificate -O /usr/local/x-ui-linux.tar.gz [package link]
+
 tar zxvf x-ui-linux.tar.gz
 chmod +x x-ui/x-ui x-ui/bin/xray-linux-* x-ui/x-ui.sh
 mv x-ui/x-ui.sh /usr/bin/x-ui
